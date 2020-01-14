@@ -1,0 +1,29 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= name %> </p>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+<form action="/users/submit" method="POST">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input name="title"  class="form-control" id="exampleFormControlInput1" placeholder="title">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Example textarea</label>
+        <textarea name="log" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+<div class="container">
+    <div class="row justify-content-center">
+    <div class="col">
+    <ul class="list-group justify-content-center">
+      <% logs.forEach(function(log) { %>
+        <li class="list-group-item justify-content-center text-center"><h7 class="text-center"><%= log.title %></h7><p class="text-center text-break"><%=log.body %></p></li>
+    <% }); %>
+    </ul>
+  </div>
+  </div>
+</div>
+
